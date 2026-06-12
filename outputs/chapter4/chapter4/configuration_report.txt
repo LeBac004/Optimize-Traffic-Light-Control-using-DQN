@@ -1,0 +1,64 @@
+============================================================
+CHAPTER 4 - EXPERIMENTAL CONFIGURATION REPORT
+============================================================
+
+SECTION 4.1.1: SIMULATION PARAMETERS
+
+Table 4.1: SUMO Simulation Parameters
+==========================================
+Parameter                    | Value
+-----------------------------|------------------
+Scenario                     | data/scenarios/hn_sample/config.sumocfg intersection
+Step Length                  | 1.0 seconds
+Yellow Phase Duration        | 5 seconds
+Episode Duration             | 3600 steps
+Warmup Period                | 60 steps
+GUI Mode                     | Disabled
+
+
+Table 4.2: Vietnamese Vehicle Weighting Factors
+================================================
+Vehicle Type    | Weight Factor | Justification
+----------------|---------------|----------------------------------
+Motorcycle      | 1.5          | High prevalence in Vietnam
+Car             | 1.0          | Standard baseline
+Bus             | 2.0          | Large vehicle, high capacity
+Truck           | 2.0          | Large vehicle, freight transport
+
+
+Table 4.3: State and Action Space Configuration
+================================================
+Component           | Description                      | Dimension
+--------------------|----------------------------------|------------
+State Features      | Queue length per lane            | 12 lanes
+                    | Average speed per lane           | 12 lanes
+                    | Waiting time per lane            | 12 lanes
+                    | Weighted vehicle count per lane  | 12 lanes
+Total State Size    |                                  | 48
+Action Space        | 4 phases (NS, EW, NSL, EWL)     | 4
+Reward Function     | queue-delay                               | Scalar
+
+SECTION 4.1.2: BASELINE METHOD
+
+Table 4.4: Fixed-Time Controller Configuration
+===============================================
+Parameter              | Value
+-----------------------|------------------
+Control Strategy       | Fixed-Time Cyclic
+Number of Phases       | 4
+Green Duration         | 25 seconds
+Yellow Duration        | 5 seconds
+Total Cycle Length     | 120 seconds
+Adaptation             | None (Static)
+
+
+Table 4.5: Control Strategy Comparison
+======================================
+Feature              | Fixed-Time        | DQN-Based
+---------------------|-------------------|------------------
+Adaptability         | None              | Real-time adaptive
+Traffic Awareness    | No                | Yes (state-based)
+Learning Capability  | No                | Yes (RL-based)
+Implementation       | Simple            | Complex
+Computational Cost   | Very Low          | Moderate
+Optimization         | Pre-determined    | Experience-based
