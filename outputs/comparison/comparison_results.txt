@@ -1,0 +1,7 @@
+DQN Metrics:
+
+Fixed-Time Metrics:
+  total_wait: mean=34764.00, std=0.00
+  avg_queue: mean=31.54, std=0.00
+  throughput: mean=250.00, std=0.00
+  episode_reward: mean=-34764.00, std=0.00
