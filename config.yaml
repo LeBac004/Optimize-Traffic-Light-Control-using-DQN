@@ -1,0 +1,43 @@
+# SUMO + DQN config tailored for VN intersections
+sumo:
+  # Path to your SUMO scenario config (.sumocfg)
+  sumocfg_path: data/scenarios/hn_sample/config.sumocfg
+  # Traffic light id to control
+  tls_id: c
+  # Map your TLS program so action index corresponds to a phase index
+  phases: [0, 1, 2, 3]
+  step_length: 1.0
+  action_duration: 5
+  max_steps: 3600
+  warmup_steps: 60
+  gui: false
+
+# Vietnamese vehicle weighting to reflect motorcycle prevalence
+vn_weights:
+  motorcycle: 1.5
+  car: 1.0
+  bus: 2.0
+  truck: 2.0
+
+reward:
+  type: queue_delay  # or throughput
+
+train:
+  total_steps: 200000
+  start_train: 10000
+  train_every: 1
+  replay_size: 100000
+  batch_size: 64
+  gamma: 0.99
+  lr: 0.0005
+  tau: 1.0
+  target_update_interval: 2000
+  double_dqn: true
+  grad_clip: 10.0
+
+explore:
+  eps_start: 1.0
+  eps_end: 0.05
+  eps_steps: 100000
+
+output_dir: outputs
