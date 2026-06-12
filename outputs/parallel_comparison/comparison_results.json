@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-01-16T23:39:03.469086",
+  "scenario": "data/scenarios/hn_sample/config.sumocfg",
+  "episodes": 1,
+  "dqn_results": [
+    {
+      "total_steps": 720,
+      "total_reward": -3835.18333333333,
+      "total_vehicles": 274,
+      "avg_queue": 5.176388888888889,
+      "max_queue": 12.0,
+      "min_queue": 1.0,
+      "avg_speed": 1.9714104452793293,
+      "max_speed": 5.643251236675746,
+      "min_speed": 0.9096716474929754,
+      "avg_wait": 2.2538194444444444,
+      "max_wait": 13.25,
+      "std_queue": 1.6467976546716658,
+      "std_speed": 0.7287336180850436
+    }
+  ],
+  "fixed_results": [
+    {
+      "total_steps": 720,
+      "total_reward": -34764.000000000044,
+      "total_vehicles": 250,
+      "avg_queue": 31.540277777777778,
+      "max_queue": 45.0,
+      "min_queue": 3.0,
+      "avg_speed": 2.441469603368797,
+      "max_speed": 7.0454790200025705,
+      "min_speed": 0.5110909434265313,
+      "avg_wait": 251.14583333333334,
+      "max_wait": 557.0,
+      "std_queue": 8.450742237654865,
+      "std_speed": 1.4568111012802136
+    }
+  ]
+}
